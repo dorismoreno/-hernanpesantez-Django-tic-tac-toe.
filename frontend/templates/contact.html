@@ -1,0 +1,41 @@
+ {% extends 'home.html' %} 
+
+{% block content %}
+    {% load static %}
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/contact.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <section class="line">
+      <br>
+      <br>
+      <br>
+      <br>
+      </section>
+ 
+ <body>
+   <div class="contact-form">
+     <h1>Contact me</h1>
+     <form method ="post" action="/contact_index/">
+     <div class='txtb'>
+      <label>Name:</label>
+      <textarea name="name" class="form-control" placeholder="" row ="4" required></textarea><br>
+    </div>
+     <div class='txtb'>
+       <label>Email:</label>
+      <textarea name="email" class="form-control" placeholder="" row ="4" required></textarea><br>
+     </div>
+    <div class='txtb'>
+      <label>Message:</label>
+      <textarea name="message" class="form-control" placeholder="" row ="4" required></textarea><br>
+    </div>
+    <input class=" btn" type="submit" value="SEND">
+    </form>
+  </div>
+
+</body>
+
+    
+{% endblock content %}
+<!-- method="post" action="/contact_index/" -->

@@ -1,0 +1,59 @@
+.jumbotron {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background: #162726;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    /* text-align: center; */
+    box-shadow: 0 0 20px #000000;
+}
+
+.form-group {
+    /* padding-left: 40px;
+    padding-right: 40px; */
+    background-color: #162726;
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.broder-top {
+    padding-left: 40px;
+}
+
+label {
+    color: #cfe8e9;
+}
+
+
+/* input {
+    background-color: #cfe8e9;
+    color: aquamarine;
+} */
+
+.textInput {
+    color: rgb(36, 39, 39);
+    background-color: #cfe8e9;
+}
+
+#id_email {
+    color: #162726;
+    background-color: #cfe8e9;
+}
+
+li,
+#hint_id_password2,
+#hint_id_username {
+    color: #cfe8e9;
+}
+
+#signup {
+    color: #162726;
+    background-color: #cfe8e9;
+}

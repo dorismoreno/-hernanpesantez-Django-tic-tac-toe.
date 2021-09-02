@@ -1,0 +1,134 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PLAY-HUB</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static '/styles/main.css' %}?{% now "U" %}">
+
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<header>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href={% url 'home' %}>PLAY-HUB</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+      <ul class="nav navbar-nav ">
+ 
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          GAMES
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul>
+        
+        <li>
+      
+          <a class="dropdown-item" href={% url 'tictactoe' %}>TICTACTOE</a></li>
+           <li>
+          <a class="dropdown-item" href={% url 'puzzle' %}>PUZZLE</a></li>
+           <li>
+        
+        </div>
+      </li>
+
+        <li><a id="about" href={% url 'about' %}>ABOUT</a></li>
+        <li><a href={% url 'contact' %}>CONTACT</a></li>
+
+
+
+
+
+
+        {% if user.is_authenticated  %}
+        <li><a>{{user.username|upper}}</a></li>
+
+
+
+        <li><a href={% url 'logout' %}?{% now "U" %}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+
+        {% else %}
+        
+        <li><a href={% url 'login' %}?{% now "U" %}><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href={% url 'register' %}?{% now "U" %}><span class="glyphicon glyphicon-plus"></span> register</a></li>
+      
+        {% endif %}      
+          <li><!-- Search form -->
+
+
+
+
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+</header>
+
+
+    {% if messages %}
+      <section class="line">
+      <br>
+      <br>
+      <br>
+      <br>
+
+            {% for message in messages  %}
+      <div class = "alert alert-{{ message.tags }}">
+      {{message.tag}}
+      {{message}}
+      </div>
+      {% endfor %}
+    {% endif %}
+      </section>
+ 
+
+
+
+   {% block content %}
+  {% endblock content %}
+
+    {% block puzzle %}
+
+    {% endblock puzzle %}
+
+
+   {% block logout %}
+  {% endblock logout %}
+
+<script>
+
+
+
+</script>
+
+</body>
+</html>

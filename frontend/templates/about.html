@@ -1,0 +1,45 @@
+ {% extends 'home.html' %} 
+
+
+{% block content %}
+  {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/about.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<section class="line">
+<br>
+<br>
+<br>
+<br>
+</section>
+<body>
+  <div class="wrapper">
+    <div class="team">
+      <div class="team_member">
+        <div class="team_img">
+          <img src= {% static "styles/hernan.jpg" %} alt="Team_image" style="border-radius: 50%;">
+        </div>
+        <h3>Hernan Pesantez</h3>
+        <p class="role"> Full-stack Developer</p>
+        <p class="description">Full-stack web developer with experience in Python and JavaScript frameworks. I'm enthusiastic about open source since I strongly believe that we can improve people's lives with open source contributions.
+
+Experience in object-oriented programming, full-stack application development, service-oriented architecture, database systems, cloud technologies, and Agile project management.
+
+Whenever I have free time I like automating the boring stuff</p>
+       
+        <div class="media"> <ul>
+          <li><a href="https://www.linkedin.com/in/hernan-pesantez-856aba2b/" ><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/hernanpesantez" ><i class="fa fa-github"></i></a></li>
+          <li><a href="https://twitter.com/HERNANPESANTEZ1" ><i class="fa fa-twitter"></i></a></li>
+         </ul></div>
+      </div>
+  
+    </div>
+  </div>
+  
+  </body>
+
+
+
+{% endblock content %}

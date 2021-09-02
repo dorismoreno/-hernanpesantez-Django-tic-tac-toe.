@@ -1,0 +1,90 @@
+<h2>Sign up Form</h2>
+<form method="post">
+  {% csrf_token %}
+  {% for field in form %}
+    <p>
+      {{ field.label_tag }}<br>
+      {{ field }}
+      {% if field.help_text %}
+        <small style="color: grey">{{ field.help_text }}</small>
+      {% endif %}
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </p>
+  {% endfor %}
+  <button type="submit">Sign up</button>
+</form>
+
+
+
+
+<section class="home" id="home" name="home" href="#home"> 
+    {% if messages %}
+      {% for message in messages  %}
+      <div class = "alert alert-{{ message.tags }}">
+      {{message}}
+      </div>
+      {% endfor %}
+    {% endif %}
+    <div id="board">
+    </div>
+
+
+
+</div>
+
+	</section>
+
+
+  <script>
+
+
+
+function buildBoard() {
+
+
+
+    var size = 3;
+    var board = "<table>";
+    var circle; 
+
+    var i, j, count=0;
+   for (i = 1; i <= size; i++) {
+      board += "<tr>";
+      for (j = 1; j <= size; j++) {
+          classNames = "box ";
+          if ((i + j) % 2 == 0) {
+              count += 1;
+              innerCircle ="<div class="+"innerCircle-red"+count+"></div>";
+                 
+              circle ="<div cass=" +"circle-red>"+innerCircle+"</div>";
+                
+              classNames += "box-red";
+          } else {
+            count += 1;
+            circle ="<div class=" +"circle-black"+count+"></div>";   
+  
+             classNames += "box-black";
+           }
+           
+          board += "<td class=\"" + classNames + "\">"+circle+"</td>";    
+   }
+      board += "</tr>";
+      
+}
+    board += "</table>";
+
+ 
+
+    document.getElementById("board").innerHTML = board;
+
+
+}
+
+
+
+
+</script>
+
+
